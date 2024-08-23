@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EmployeeManagementSystem.Models
 {
     public class Employee
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, Column(Order = 0)]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "First name is required.")]

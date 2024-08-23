@@ -6,6 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Register the EmployeeService
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
 // connection String for database
 builder.Services.AddDbContext<ApplicationDbContext>(Options =>
 {
